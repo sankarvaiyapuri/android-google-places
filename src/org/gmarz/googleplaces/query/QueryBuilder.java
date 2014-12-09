@@ -38,6 +38,8 @@ class QueryBuilder {
 			query.append(parameter.getValue());
 			query.append("&");
 		}
+		//Removes the last & character from the query string
+		query.setLength(Math.max(query.length() - 1, 0));
 		
 		return encode(query.toString());
 	}
